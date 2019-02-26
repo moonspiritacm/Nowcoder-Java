@@ -1,0 +1,36 @@
+package com.moonspirit.nowcoder;
+
+/**
+ * @ClassName      Solution007_1
+ * @Description    剑指 offer - 斐波那契数列 迭代
+ * @author         moonspirit
+ * @date           2019年2月26日 上午10:57:35
+ * @version        1.0.0
+ */
+public class Solution007_1 {
+	public int Fibonacci(int n) {
+		int[] num = new int[] { 0, 1 };
+		for (int i = 0; i < n; i++) {
+			num[i % 2] = num[0] + num[1];
+		}
+		return num[n % 2];
+	}
+}
+
+/**
+ * @ClassName      Solution007_2
+ * @Description    剑指 offer - 斐波那契数列 递归
+ * @author         moonspirit
+ * @date           2019年2月26日 上午10:57:35
+ * @version        1.0.0
+ */
+public class Solution007_2 {
+	public int Fibonacci(int n) {
+		if (n == 0)
+			return 0;
+		if (n == 1)
+			return 1;
+
+		return Fibonacci(n - 1) + Fibonacci(n - 2);
+	}
+}
